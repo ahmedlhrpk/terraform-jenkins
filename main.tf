@@ -8,18 +8,18 @@ terraform {
 }
 
 provider "aws" {
-  region = "eu-north-1"
+  region = "us-east-1"
 }
 module "ec2_instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
   name = "t1"
 
-  instance_type          = "t3.micro"
-  key_name               = "vaishu"
+  instance_type          = "t2.micro"
+  key_name               = "terra"
   monitoring             = true
-  vpc_security_group_ids = ["sg-03946aa60e5ded4b0"]
-  subnet_id              = "subnet-0bf75427a7b9569dd"
+  vpc_security_group_ids = ["sg-0473adb250221875f"]
+  subnet_id              = "subnet-02d3438600ec1fec7"
 
   tags = {
     Terraform   = "true"
